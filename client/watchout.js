@@ -33,3 +33,27 @@ asteroid.attr("cx", function(d, i){
         return dataset[i][1];
        })
        .attr("r", 15);
+
+// Move asteroids
+var moveAsteroids = function () {
+  // Randomize dataset
+  for (var i = 0; i < dataset.length; i++) {
+    dataset[i][0] = (Math.random() * w); // x coord
+    dataset[i][1] = (Math.random() * h);  // y coord
+  }
+  // Transition asteroid coordinates
+  asteroid = svg.selectAll('circle')
+            .data(dataset)
+            .transition()
+            .duration(500)
+            .ease('linear')
+            .attr("cx", function(d, i){
+                return dataset[i][0];
+              })
+            .attr("cy", function(d, i){
+              return dataset[i][1];
+             })
+            .attr("r", 15);
+};
+
+setInterval(moveAsteroids, 700)
