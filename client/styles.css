@@ -1,5 +1,11 @@
-/* your beautiful css styling goes here! */
+/*
+======================
+BOARD STYLES
+======================
+*/
 
-/* Note: an asteroid image is included in this repo.
-Feel free to use it if you like. */
+.board{
+  margin: 10% auto;
+  display: block;
 
+}

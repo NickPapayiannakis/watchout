@@ -1,0 +1,26 @@
+PROBLEMS TO SOLVE:
+
+  Have commits that refer to each of these numbered steps.
+
+  DONE 1. Draw the enemies in an svg element.
+    a. create a data set with random x,y coords
+      i. loop n meteor times
+      ii. push.(random x coord) into datum n
+      iii. push.(generate random y coord) into dataum n
+    b. .enter() meteors for each datum
+
+  DONE 2. Make it so that the enemies move to a new random location every second.
+    a. generate new random dataset
+    b. set transition with delay to new data
+    c. update meteor positions.
+
+  3. Make a differently-colored dot to represent the player. Make it draggable.
+    a. create a ship in svg center with its own unique position set
+    b. use jquery mouse tracking to update coords
+
+  4. Detect when a enemy touches you. ------> collision detection
+
+  5. Keep track of the user's score, and display it.
+    a. update every second
+
+  6. Use css3 animations to make the enemies whirling shuriken.
