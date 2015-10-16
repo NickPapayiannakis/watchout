@@ -57,3 +57,39 @@ var moveAsteroids = function () {
 };
 
 setInterval(moveAsteroids, 700)
+
+//draggable player
+var drag = d3.behavior.drag()
+    .on("drag", function(d,i) {
+        d.x += d3.event.dx
+        d.y += d3.event.dy
+        d3.select(this).attr("transform", function(d,i){
+            return "translate(" + d.x + "," + d.y + ")"
+        })
+    });
+
+var showPlayer = function(x, y, r) {
+  d3.select('body').select('svg')
+      .append('circle')
+      .data([ {"x":x, "y":y} ])
+      .call(drag)
+      .attr("transform", "translate(" + x + "," + y + ")")
+      .attr("class", "player")
+      .attr("cx", x)
+      .attr("cy", y)
+      .attr("r", r)
+      .attr("fill","blue");
+}
+
+showPlayer(100,100,30);
+
+
+
+
+// Collision Detection
+
+// Score keeping
+
+//Total score
+// $('.totalScore')
+
